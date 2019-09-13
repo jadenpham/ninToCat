@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+
+        img{
+            display: block;
+            margin: 2px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ninja">
+        <img src="./img/cat0.png" data-alt-src="./img/ninja0.png">
+        <img src="./img/cat1.png" data-alt-src="./img/ninja1.png">
+        <img src="./img/cat2.png" data-alt-src="./img/ninja2.png">
+        <img src="./img/cat3.png" data-alt-src="./img/ninja3.png">
+        <img src="./img/cat4.png" data-alt-src="./img/ninja4.png">
+    </div>
+    <script>
+        //clicking on each img
+        $("img").click(function(){
+            //declaring ninja to img link
+            let ninja = $(this).attr("data-alt-src");
+            //declaring cat to img link
+            let cat = $(this).attr("src");
+            //if img tag is on src, swaps src for data-alt
+            $(this).attr("src", ninja);
+            //if img tag is on data-alt, swaps for src
+            $(this).attr("data-alt-src", cat);
+            // console.log("clicked")
+        })
+    </script>
+    <!-- <div class="cat" style="z-index: 1;">
+        <img src="./img/ninja0.png" alt="">
+        <img src="./img/ninja1.png" alt="">
+        <img src="./img/ninja2.png" alt="">
+        <img src="./img/ninja3.png" alt="">
+        <img src="./img/ninja4.png" alt="">
+    </div> -->
+</body>
+</html>
